@@ -16,7 +16,7 @@
             <form:errors path="description" cssClass="text-warning"/>
         </fieldset>
 
-        <input type="submit" class="btn btn-success">
+        <input type="submit" class="btn btn-success" value="Submit">
     </form:form>
     </div>
     <script src="webjars/jquery/1.11.1/jquery.min.js"></script>
