@@ -13,7 +13,6 @@ public class TodoService {
     private static List<Todo> todos = new ArrayList<Todo>();
     private static int idCount = 1;
 
-//    static {todos.add(new Todo(40, "michas", "Learn Struts", new Date(), false));}
 
     public List<Todo> retrieveTodos(String user) {
         List<Todo> filteredTodos = new ArrayList<Todo>();
@@ -26,8 +25,8 @@ public class TodoService {
         return filteredTodos;
     }
 
-    public void addTodo(String user, String desc, Date targetDate, boolean isDone) {
-        todos.add(new Todo(++idCount,user, desc, targetDate, isDone));
+    public void addTodo(String user, String desc) {
+        todos.add(new Todo(++idCount,user, desc));
     }
 
     public void deleteTodo(int id) {

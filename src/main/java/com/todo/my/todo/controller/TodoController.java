@@ -30,7 +30,7 @@ public class TodoController {
 
     @RequestMapping(value = "/todo", method = RequestMethod.GET)
     public String showAddTodoPage(ModelMap modelMap) {
-        modelMap.addAttribute("todo", new Todo(0,(String) modelMap.get("name"), "", new Date(), false));
+        modelMap.addAttribute("todo", new Todo(0,(String) modelMap.get("name"), ""));
         return "todo";
     }
 
@@ -40,7 +40,7 @@ public class TodoController {
         if(result.hasErrors()) {
             return "todo";
         }
-        service.addTodo((String) modelMap.get("name"),todo.getDescription(),new Date(),false);
+        service.addTodo((String) modelMap.get("name"),todo.getDescription());
         return "redirect:/list-todos";
 }
 
