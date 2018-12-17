@@ -51,7 +51,7 @@ public class TodoService {
 
     public void updateTodo(Todo todo) {
 
-        todos.remove(todo);
+        todos.removeIf(todo1 -> todo1.getId()==todo.getId());
         todos.add(todo);
 
 
