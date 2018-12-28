@@ -1,10 +1,10 @@
-package com.todo.my.todo.service;
+package com.todo.my.todo.dao;
 
 import com.todo.my.todo.entity.Todo;
 
 import java.util.List;
 
-public interface TodoService {
+public interface TodoDAO {
     List<Todo> findAll();
 
     Todo findById(int theId);

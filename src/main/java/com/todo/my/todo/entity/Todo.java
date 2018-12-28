@@ -1,25 +1,34 @@
-package com.todo.my.todo.model;
+package com.todo.my.todo.entity;
 
+import javax.persistence.*;
 import javax.validation.constraints.Size;
-import java.util.Date;
 import java.util.Objects;
 
-
+@Entity
+@Table(name="todos")
 public class Todo {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id")
     private int id;
-    private String user;
-    @Size(min=5, message="Enter at least 5 characters...")
+//    private String user;
+//    @Size(min=5, message="Enter at least 5 characters...")
+    @Column(name="description")
     private String description;
 
 
-    public Todo() {
-        super();
-    }
+    public Todo() { }
 
-    public Todo(int id, String user, String description) {
+/*    public Todo(int id, String user, String description) {
         this.id = id;
         this.user = user;
+        this.description = description;
+
+    }*/
+
+    public Todo(int id, String description) {
+        this.id = id;
         this.description = description;
 
     }
@@ -32,14 +41,6 @@ public class Todo {
         this.id = id;
     }
 
-    public String getUser() {
-        return user;
-    }
-
-    public void setUser(String user) {
-        this.user = user;
-    }
-
     public String getDescription() {
         return description;
     }
@@ -48,7 +49,7 @@ public class Todo {
         this.description = description;
     }
 
-    @Override
+    /*@Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -62,12 +63,11 @@ public class Todo {
     public int hashCode() {
         return Objects.hash(id, user, description);
     }
-
+*/
     @Override
     public String toString() {
         return "Todo{" +
                 "id=" + id +
-                ", user='" + user + '\'' +
                 ", description='" + description + '\'' +
                 '}';
     }
