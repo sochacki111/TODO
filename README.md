@@ -16,4 +16,4 @@ TODO is a simple web app helps you write down your daily goals.
 
 <h2>Attention:</h2>
 Currently I'am working on refactoring this app working as CRUD REST API, so you can check out crud-rest-api branch to see my progress.
-In order to run app from this branch you need to additionally run sql script in mysql and inside project's "application.properties" file set url, username and password of your database connection.
+
