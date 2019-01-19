@@ -2,6 +2,7 @@ package com.todo.my.todo.service;
 
 import com.todo.my.todo.dao.TodoDAO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import com.todo.my.todo.entity.Todo;
 import org.springframework.transaction.annotation.Transactional;
@@ -14,7 +15,7 @@ public class TodoServiceImpl implements TodoService{
     private TodoDAO todoDAO;
 
     @Autowired
-    public TodoServiceImpl(TodoDAO theTodoDAO) {
+    public TodoServiceImpl(@Qualifier("todoDAOJpaImpl") TodoDAO theTodoDAO) {
         todoDAO = theTodoDAO;
     }
 
