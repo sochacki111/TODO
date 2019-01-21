@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Todo List</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<div th:if="${not #lists.isEmpty(todos)}">
+    <h2>Todo List</h2>
+    <table class="glyphicon glyphicon-calendar">
+        <tr>
+            <th>Description</th>
+        </tr>
+        <tr th:each="todo : ${todos}">
+            <td th:text="${todo.description}"></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
